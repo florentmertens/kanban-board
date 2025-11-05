@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <section id="overlay-modal">
+      <div class="modal">
+        <h2>Ajouter une nouvelle tâche</h2>
+        <form id="form">
+          <label for="title">Titre</label>
+          <input type="text" name="title" id="title" />
+          <label for="Description">Description</label>
+          <textarea name="Description" id="Description"></textarea>
+          <div class="form-btn">
+            <button id="cancel-button" type="button">Annuler</button>
+            <button id="save-button" type="submit">Sauvegarder</button>
+          </div>
+        </form>
+      </div>
+    </section>
     <header>
       <div>
         <img src="./images/logo.png" alt="Logo" />
         <h1>Projet Kanban</h1>
       </div>
-      <button>Ajouter une tâche</button>
+      <button id="add-task-button">Ajouter une tâche</button>
     </header>
     <main>
       <section class="kanban-column kanban-column-todo">
@@ -23,27 +38,26 @@
         </div>
         <div class="kanban-card-container">
           <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-drop-zone">Glissez une tâche ici
-        </div>
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-drop-zone">Glissez une tâche ici</div>
         </div>
       </section>
       <section class="kanban-column kanban-column-inprogress">
@@ -52,28 +66,27 @@
           <span>3</span>
         </div>
         <div class="kanban-card-container">
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-drop-zone">Glissez une tâche ici
-        </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-drop-zone">Glissez une tâche ici</div>
         </div>
       </section>
       <section class="kanban-column kanban-column-done">
@@ -82,28 +95,27 @@
           <span>3</span>
         </div>
         <div class="kanban-card-container">
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-card">
-          <h3>Design the new landing page</h3>
-          <p>Create mockups and prototypes for the new marketing website.</p>
-        </div>
-        <div class="kanban-drop-zone">Glissez une tâche ici
-</div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-card">
+            <h3>Design the new landing page</h3>
+            <p>Create mockups and prototypes for the new marketing website.</p>
+          </div>
+          <div class="kanban-drop-zone">Glissez une tâche ici</div>
         </div>
       </section>
     </main>

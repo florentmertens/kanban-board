@@ -15,8 +15,30 @@ cancelBtn.addEventListener("click", function () {
   form.reset();
 });
 
-saveBtn.addEventListener("click", function () {
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const title = form.elements["title"].value.trim();
+  const description = form.elements["description"].value.trim();
+  
+  if (!title || !description) {
+    alert("Complète tous les champs !");
+    return;
+  }
+  createNewTask(title, description);
   overlayModal.classList.remove("open");
   addTaskBtn.disabled = false;
   form.reset();
 });
+
+function createNewTask(title, description) {
+  const newCard = document.createElement("div");
+  newCard.className = "kanban-card";
+  const cardTitle = document.createElement("h3");
+  cardTitle.textContent = title;
+  const cardDescription = document.createElement("p");
+  cardDescription.textContent = description;
+  newCard.appendChild(cardTitle);
+  newCard.appendChild(cardDescription);
+  const todoColumn = document.getElementById("kanban-column-todo");
+  todoColumn.insertBefore(newCard, todoColumn.lastElementChild);
+}

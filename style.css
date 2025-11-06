@@ -102,15 +102,15 @@ main {
   background-color: #e5e7eb;
 }
 
-.kanban-column-todo .kanban-column-title {
+.todo-title {
   border-bottom: 2px solid #3774ee;
 }
 
-.kanban-column-inprogress .kanban-column-title {
+.inprogress-title {
   border-bottom: 2px solid #eab716;
 }
 
-.kanban-column-done .kanban-column-title {
+.done-title {
   border-bottom: 2px solid #2fc767;
 }
 
@@ -229,7 +229,9 @@ main {
     max-height: 500px;
   }
 
-  .modal form textarea {
-    min-width: 200px;
+  #form textarea {
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 300px;
   }
 }

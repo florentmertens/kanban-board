@@ -13,9 +13,9 @@
         <h2>Ajouter une nouvelle tâche</h2>
         <form id="form">
           <label for="title">Titre</label>
-          <input type="text" name="title" id="title" />
+          <input type="text" name="title" id="title" required/>
           <label for="Description">Description</label>
-          <textarea name="Description" id="Description"></textarea>
+          <textarea name="description" id="description" required></textarea>
           <div class="form-btn">
             <button id="cancel-button" type="button">Annuler</button>
             <button id="save-button" type="submit">Sauvegarder</button>
@@ -31,12 +31,12 @@
       <button id="add-task-button">Ajouter une tâche</button>
     </header>
     <main>
-      <section class="kanban-column kanban-column-todo">
-        <div class="kanban-column-title">
+      <section class="kanban-column">
+        <div class="kanban-column-title todo-title">
           <h2>À faire</h2>
           <span>3</span>
         </div>
-        <div class="kanban-card-container">
+        <div class="kanban-card-container" id="kanban-column-todo">
           <div class="kanban-card">
             <h3>Design the new landing page</h3>
             <p>Create mockups and prototypes for the new marketing website.</p>
@@ -60,12 +60,12 @@
           <div class="kanban-drop-zone">Glissez une tâche ici</div>
         </div>
       </section>
-      <section class="kanban-column kanban-column-inprogress">
-        <div class="kanban-column-title">
+      <section class="kanban-column">
+        <div class="kanban-column-title inprogress-title">
           <h2>En cours</h2>
           <span>3</span>
         </div>
-        <div class="kanban-card-container">
+        <div class="kanban-card-container" id="kanban-column-inprogress">
           <div class="kanban-card">
             <h3>Design the new landing page</h3>
             <p>Create mockups and prototypes for the new marketing website.</p>
@@ -89,12 +89,12 @@
           <div class="kanban-drop-zone">Glissez une tâche ici</div>
         </div>
       </section>
-      <section class="kanban-column kanban-column-done">
-        <div class="kanban-column-title">
+      <section class="kanban-column">
+        <div class="kanban-column-title done-title">
           <h2>Terminé</h2>
           <span>3</span>
         </div>
-        <div class="kanban-card-container">
+        <div class="kanban-card-container" id="kanban-column-done">
           <div class="kanban-card">
             <h3>Design the new landing page</h3>
             <p>Create mockups and prototypes for the new marketing website.</p>

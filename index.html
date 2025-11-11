@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="overlay-modal">
+    <section id="overlay-modal" class="hidden">
       <div class="modal">
-        <h2>Ajouter une nouvelle tâche</h2>
+        <h2 id="modal-title">Ajouter une nouvelle tâche</h2>
         <form id="form">
           <label for="title">Titre</label>
-          <input type="text" name="title" id="title" required/>
+          <input type="text" name="title" id="title" required />
           <label for="Description">Description</label>
           <textarea name="description" id="description" required></textarea>
           <div class="form-btn">

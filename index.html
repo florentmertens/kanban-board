@@ -14,9 +14,16 @@
         <form id="form">
           <label for="title">Titre</label>
           <input type="text" name="title" id="title" required />
+          <label for="select">Statut</label>
+          <select name="status" id="status">
+            <option value="todo">À Faire</option>
+            <option value="inprogress">En Cours</option>
+            <option value="done">Terminé</option>
+          </select>
           <label for="Description">Description</label>
           <textarea name="description" id="description" required></textarea>
           <div class="form-btn">
+            <button id="delete-button" type="button">Supprimer</button>
             <button id="cancel-button" type="button">Annuler</button>
             <button id="save-button" type="submit">Sauvegarder</button>
           </div>

@@ -13,6 +13,7 @@ let editingTaskId = null;
 const addTaskBtn = document.getElementById("add-task-button");
 const cancelBtn = document.getElementById("cancel-button");
 const saveTaskBtn = document.getElementById("save-button");
+const deleteBtn = document.getElementById("delete-button");
 
 loadTasks();
 renderTasks();
@@ -32,14 +33,33 @@ saveTaskBtn.addEventListener("click", function (e) {
   const form = document.getElementById("form");
   const title = form.title.value.trim();
   const description = form.description.value.trim();
+  const status = form.status.value
 
   if (editingTaskId) {
     const task = tasks.find((task) => task.id === editingTaskId);
     task.title = title;
     task.description = description;
+    task.status = status;
   } else {
-    const newTask = new Task(Date.now().toString(), title, description, "todo");
+    const newTask = new Task(Date.now().toString(), title, description, status);
     tasks.push(newTask);
+  }
+
+  saveTask();
+  renderTasks();
+  closeModal();
+  resetForm();
+  editingTaskId = null;
+});
+
+deleteBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const form = document.getElementById("form");
+  const title = form.title.value.trim();
+  const description = form.description.value.trim();
+
+  if (editingTaskId) {
+    tasks = tasks.filter(task => task.id !== editingTaskId);
   }
 
   saveTask();
@@ -74,11 +94,14 @@ function resetForm(data) {
   if (data) {
     form.title.value = data.title;
     form.description.value = data.description;
+    form.status.value = data.status
     document.getElementById("modal-title").textContent = "Modifier la tâche";
+    deleteBtn.style.display = "flex";
   } else {
     form.reset();
     document.getElementById("modal-title").textContent =
       "Ajouter une nouvelle tâche";
+    deleteBtn.style.display = "none";
   }
 }
 
@@ -106,6 +129,10 @@ function renderTasks() {
     taskCard.className = "kanban-card";
     taskCard.dataset.id = task.id;
     taskCard.innerHTML = `<h3>${task.title}</h3><p>${task.description}</p>`;
+    
+    taskCard.addEventListener("click", () => {
+      openModal(task);
+    });
 
     if (task.status === "todo") {
       document.getElementById("kanban-column-todo").appendChild(taskCard);

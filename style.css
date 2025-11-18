@@ -192,6 +192,17 @@ main {
   font-family: inherit;
 }
 
+#form select {
+  height: 2rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: 2px solid #d0d5db;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.25rem;
+  font-family: inherit;
+}
+
 #form textarea {
   font-family: inherit;
   margin-bottom: 1.5rem;
@@ -219,6 +230,12 @@ main {
   background-color: #2b6cee;
 }
 
+.form-btn #delete-button {
+  display: none;
+  color: white;
+  background-color: #d9534f;
+}
+
 @media (max-width: 1000px) {
   main {
     display: flex;
@@ -231,7 +248,7 @@ main {
 
   #form textarea {
     min-width: 300px;
-    max-width: 300px;
+    max-width: 100%;
     max-height: 300px;
   }
 }

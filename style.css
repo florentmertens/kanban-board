@@ -42,6 +42,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 header div {
@@ -71,6 +72,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  overflow: hidden;
 }
 
 .kanban-column {
@@ -79,16 +81,21 @@ main {
   background-color: #f3f4f6;
   border-radius: 5px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-  padding: 10px;
   gap: 1rem;
+  height: fit-content;
   max-height: 100%;
+  overflow-y: auto;
 }
 
 .kanban-column-title {
   display: flex;
   align-items: center;
-  height: 2.5rem;
   gap: 0.5rem;
+  position: sticky;
+  top: 0;
+  background-color: #f3f4f6;
+  z-index: 1;
+  padding: 10px;
 }
 
 .kanban-column-title span {
@@ -115,11 +122,11 @@ main {
 }
 
 .kanban-card-container {
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   gap: 1rem;
+  padding: 10px;
 }
 
 .kanban-card {
@@ -130,6 +137,18 @@ main {
   border-radius: 5px;
   padding: 15px;
   min-height: 150px;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.kanban-card.dragging {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  cursor: grabbing;
+}
+
+.kanban-drop-zone.dragover {
+  background-color: #cce4ff;
+  border: 2px dashed #2b6cee;
 }
 
 .kanban-drop-zone {
@@ -154,6 +173,7 @@ main {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
+  z-index: 3;
 }
 
 #overlay-modal.hidden {
@@ -236,10 +256,26 @@ main {
   background-color: #d9534f;
 }
 
+.error-message {
+  color: white;
+  background-color: #e0443f;
+  font-size: 0.9rem;
+  margin: 0.25rem 0 1rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+input.error,
+textarea.error {
+  border: 2px solid red !important;
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 1000px) {
   main {
     display: flex;
     flex-direction: column;
+    overflow: visible;
   }
 
   .kanban-column {
